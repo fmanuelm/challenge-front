@@ -1,3 +1,7 @@
+/**
+ * 
+Que te dé la bendición de Abraham, y a tu descendencia contigo, para que heredes la tierra en que habitas, la que Dios dio a Abraham.»
+ */
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';

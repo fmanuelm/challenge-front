@@ -1,24 +1,21 @@
-import logo from './logo.svg';
-import './App.css';
+import { Fragment, useMemo, useState } from 'react';
+import Header from './components/header';
+import Body from './components/body';
+import { UserContext } from "./UserContext";
+
 
 function App() {
+
+  const [text, setText] = useState(); // hooks para manejar el estado
+  const invertText = useMemo(() => ({ text, setText }), [text, setText]);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Fragment>
+      <UserContext.Provider value={invertText}>
+        <Header/>
+        <Body/>
+      </UserContext.Provider>
+    </Fragment>
   );
 }
 
